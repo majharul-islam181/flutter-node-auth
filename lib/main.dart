@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_node_auth/providers/user_provider.dart';
+import 'package:flutter_node_auth/screens/signup_scree.dart';
+import 'package:provider/provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() { 
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_)=> UserProvider()),
+  ],
+  child: const MyApp(),),);
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home: const SignupScreen(),
     );
   }
 }
