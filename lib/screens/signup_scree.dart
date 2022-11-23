@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_node_auth/custom_textfield.dart';
 import 'package:flutter_node_auth/screens/login_screen.dart';
 import 'package:flutter_node_auth/services/auth_services.dart';
 

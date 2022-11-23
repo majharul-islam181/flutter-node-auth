@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_node_auth/services/auth_services.dart';
 
 import '../common_textfield.dart';
-
-
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -14,9 +13,15 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
-  
+  final AuthService authService = AuthService();
 
- 
+  void loginUser() {
+    authService.sinInUser(
+        context: context,
+        email: emailController.text,
+        password: passwordController.text);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
